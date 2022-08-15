@@ -1,8 +1,6 @@
 # Unity-MQTT-Setup
 
-First Step
-
-Publish a valuable you would like to subscribe from other agent through mqtt, for example:
+First Step - Publish a valuable you would like to subscribe from other agent through mqtt, for example:
 
         public float seconds = 0f;
         public float minutes = 0f;
@@ -11,8 +9,7 @@ Publish a valuable you would like to subscribe from other agent through mqtt, fo
         public bool wineGlass = false;
         
 
-Second Step:
-In the SubscribeTopics, add your mqtt topic with the following format:
+Second Step - In the SubscribeTopics, add your mqtt topic with the following format:
 
         protected override void SubscribeTopics()
         {
