@@ -14,7 +14,7 @@ Publish a valuable you would like to subscribe from other agent through mqtt, fo
 Second Step:
 In the SubscribeTopics, add your mqtt topic with the following format:
 
-protected override void SubscribeTopics()
+        protected override void SubscribeTopics()
         {
             client.Subscribe(new string[] { "jieThesis/Oculus/seconds" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
             client.Subscribe(new string[] { "jieThesis/Oculus/minutes" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
