@@ -20,3 +20,19 @@ Second Step - In the SubscribeTopics, add your mqtt topic with the following for
             client.Subscribe(new string[] { "jieThesis/Oculus/wineGlass" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
 
         }
+        
+ Third Step - In the DecodeMessage, add your topic related to the value in a if statement in the following format:
+ 
+        protected override void DecodeMessage(string topic, byte[] message)
+        {
+            string msg = System.Text.Encoding.UTF8.GetString(message);
+            
+            StoreMessage(msg);
+            
+
+            if (topic == "jieThesis/Oculus/seconds")
+            {
+                
+                seconds = Single.Parse(msg);
+                
+            }
