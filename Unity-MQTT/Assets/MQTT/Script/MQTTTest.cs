@@ -8,7 +8,7 @@ using uPLibrary.Networking.M2Mqtt.Messages;
 using M2MqttUnity;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using LitJson;
+
 
 /// <summary>
 /// Examples for the M2MQTT library (https://github.com/eclipse/paho.mqtt.m2mqtt),
@@ -26,7 +26,7 @@ namespace M2MqttUnity.Examples
 
         private List<string> eventMessages = new List<string>();
         private bool updateUI = false;
-        private JsonData Data;
+        
 
          
         public float seconds = 0f;
@@ -67,25 +67,7 @@ namespace M2MqttUnity.Examples
             this.isEncrypted = isEncrypted;
         }
 
-        /*
-        public void SetUiMessage(string msg)
-        {
-            if (consoleInputField != null)
-            {
-                consoleInputField.text = msg;
-                updateUI = true;
-            }
-        }
-
-        public void AddUiMessage(string msg)
-        {
-            if (consoleInputField != null)
-            {
-                consoleInputField.text += msg + "\n";
-                updateUI = true;
-            }
-        }
-        */
+       
         protected override void OnConnecting()
         {
             base.OnConnecting();
@@ -132,55 +114,7 @@ namespace M2MqttUnity.Examples
         {
             //AddUiMessage("CONNECTION LOST!");
         }
-        /*
-        private void UpdateUI()
-        {
-            if (client == null)
-            {
-                if (connectButton != null)
-                {
-                    connectButton.interactable = true;
-                    disconnectButton.interactable = false;
-                    testPublishButton.interactable = false;
-                }
-            }
-            else
-            {
-                if (testPublishButton != null)
-                {
-                    testPublishButton.interactable = client.IsConnected;
-                }
-                if (disconnectButton != null)
-                {
-                    disconnectButton.interactable = client.IsConnected;
-                }
-                if (connectButton != null)
-                {
-                    connectButton.interactable = !client.IsConnected;
-                }
-            }
-            if (addressInputField != null && connectButton != null)
-            {
-                addressInputField.interactable = connectButton.interactable;
-                addressInputField.text = brokerAddress;
-            }
-            if (portInputField != null && connectButton != null)
-            {
-                portInputField.interactable = connectButton.interactable;
-                portInputField.text = brokerPort.ToString();
-            }
-            if (encryptedToggle != null && connectButton != null)
-            {
-                encryptedToggle.interactable = connectButton.interactable;
-                encryptedToggle.isOn = isEncrypted;
-            }
-            if (clearButton != null && connectButton != null)
-            {
-                clearButton.interactable = connectButton.interactable;
-            }
-            updateUI = false;
-        }
-        */
+       
         protected override void Start()
         {
             Connect();
@@ -253,23 +187,7 @@ namespace M2MqttUnity.Examples
         protected override void Update()
         {
             base.Update(); // call ProcessMqttEvents()
-            //ProcessMessage(msg);
-            /*
-            if (eventMessages.Count > 0)
-            {
-                foreach (string msg in eventMessages)
-                {
-                    ProcessMessage(msg);
-                }
-                eventMessages.Clear();
-            }
-            */
-            /*
-            if (updateUI)
-            {
-                UpdateUI();
-            }
-            */
+           
         }
 
         private void OnDestroy()
