@@ -36,3 +36,6 @@ Second Step - In the SubscribeTopics, add your mqtt topic with the following for
                 seconds = Single.Parse(msg);
                 
             }
+            
+ ## Cite
+ https://github.com/gpvigano/M2MqttUnity
